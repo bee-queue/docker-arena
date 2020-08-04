@@ -10,7 +10,7 @@ on:
     branches: [default]
 
 jobs:
-  build:
+  lint:
     runs-on: ubuntu-latest
 
     strategy:
@@ -25,3 +25,21 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run ci --if-present
+
+  release:
+    if: github.event_name == 'push' && github.ref == 'refs/heads/default'
+    runs-on: ubuntu-latest
+
+    needs: [lint]
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js 14.x
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14.x
+      - run: npm ci
+      - name: Release
+        run: npx semantic-release@^17.0.0 -b default
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
