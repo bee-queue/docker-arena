@@ -1,0 +1,36 @@
+{
+  "name": "docker-arena",
+  "private": true,
+  "main": "index.js",
+  "version": "0.0.0",
+  "description": "The official docker application for bee-queue arena.",
+  "scripts": {
+    "build": "docker build . -t docker-arena",
+    "ci": "npm run lint",
+    "inspect": "nodemon --inspect --trace-warnings --ignore 'public/vendor/*'",
+    "lint": "prettier -c .",
+    "start": "nodemon --ignore 'public/vendor/*'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "arena",
+    "bee",
+    "bull",
+    "dashboard",
+    "docker",
+    "queue"
+  ],
+  "author": "Eli Skeggs <eli@mixmax.com> (https://mixmax.com)",
+  "license": "MIT",
+  "dependencies": {
+    "bee-queue": "^1.2.3",
+    "bull": "^3.16.0",
+    "bull-arena": "^2.8.2",
+    "nodemon": "^2.0.4"
+  },
+  "repository": "https://github.com/bee-queue/docker-arena.git",
+  "devDependencies": {
+    "@mixmaxhq/prettier-config": "^1.0.0",
+    "prettier": "^2.0.5"
+  }
+}
