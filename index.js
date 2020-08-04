@@ -9,4 +9,14 @@ try {
   }
 }
 
-Arena(config);
+let Bull, Bee;
+
+Arena({
+  ...config,
+  get Bull() {
+    return Bull || (Bull = require('bull'));
+  },
+  get Bee() {
+    return Bee || (Bee = require('bee-queue'));
+  },
+});
