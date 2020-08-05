@@ -38,6 +38,12 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
+        with:
+          # Necessary to avoid the GitHub action credentials being used by semantic-release. When
+          # semantic-release pushes to the tag, we want that push to trigger the docker build, but
+          # the action credentials aren't allowed to trigger downstream workflows. Instead, we
+          # explicitly use a personal access token.
+          persist-credentials: false
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
@@ -46,4 +52,4 @@ jobs:
       - name: Release
         run: npx semantic-release -b default
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
