@@ -30,7 +30,7 @@
   },
   "repository": "https://github.com/bee-queue/docker-arena.git",
   "devDependencies": {
-    "@commitlint/cli": "^9.1.1",
+    "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^9.1.1",
     "@mixmaxhq/prettier-config": "^1.0.0",
     "@semantic-release/commit-analyzer": "^8.0.1",
