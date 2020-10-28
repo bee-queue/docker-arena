@@ -24,7 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "bee-queue": "^1.2.3",
-    "bull": "^3.18.0",
+    "bull": "^3.18.1",
     "bull-arena": "^3.2.3",
     "nodemon": "^2.0.6"
   },
