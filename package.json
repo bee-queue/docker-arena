@@ -23,7 +23,7 @@
   "author": "Eli Skeggs <eli@mixmax.com> (https://mixmax.com)",
   "license": "MIT",
   "dependencies": {
-    "bee-queue": "^1.2.3",
+    "bee-queue": "^1.3.0",
     "bull": "^3.18.1",
     "bull-arena": "^3.4.0",
     "nodemon": "^2.0.6"
