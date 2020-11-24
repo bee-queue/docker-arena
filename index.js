@@ -19,4 +19,7 @@ Arena({
   get Bee() {
     return Bee || (Bee = require('bee-queue'));
   },
+  get BullMQ() {
+    return BullMQ || (BullMQ = require('bullmq'));
+  },
 });
