@@ -6,7 +6,8 @@
   "description": "The official docker application for bee-queue arena.",
   "scripts": {
     "build": "docker build . -t docker-arena",
-    "ci": "npm run lint && commitlint --from origin/default",
+    "ci": "npm run lint",
+    "ci:commitlint": "commitlint --from origin/default",
     "inspect": "nodemon --inspect --trace-warnings --ignore 'public/vendor/*'",
     "lint": "prettier -c .",
     "start": "nodemon --ignore 'public/vendor/*'",

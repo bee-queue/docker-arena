@@ -29,6 +29,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - run: npm ci
       - run: npm run ci --if-present
+      - name: Commitlint
+        run: npm run ci:commitlint --if-present
+        if: github.actor == 'dependabot[bot]' || github.actor == 'dependabot-preview[bot]'
 
   release:
     if: github.event_name == 'push' && github.ref == 'refs/heads/default'
