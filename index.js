@@ -9,7 +9,7 @@ try {
   }
 }
 
-let Bull, Bee;
+let Bull, Bee, BullMQ;
 
 Arena({
   ...config,
