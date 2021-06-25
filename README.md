@@ -18,4 +18,4 @@ $ docker run -p 4567:4567 -v </local/route/to/index.json>:/opt/arena/index.json 
 
 See [the docs][usage] for `index.json`.
 
-[index.json]: https://github.com/bee-queue/arena/#usage
+[usage]: https://github.com/bee-queue/arena/#usage
