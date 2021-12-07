@@ -20,6 +20,6 @@ Arena({
     return Bee || (Bee = require('bee-queue'));
   },
   get BullMQ() {
-    return BullMQ || (BullMQ = require('bullmq'));
+    return BullMQ || (BullMQ = require('bullmq').Queue);
   },
 });
