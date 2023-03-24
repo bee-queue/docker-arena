@@ -1,0 +1,23 @@
+version: "3.5"
+
+services:
+  arena:
+    container_name: arena
+#    image: venatum/arena:latest
+    build:
+      dockerfile: ./Dockerfile
+      context: .
+    restart: unless-stopped
+    depends_on:
+      - redis
+    volumes:
+      - ./index.json:/home/node/arena/index.json:ro
+    ports:
+      - "4567:4567"
+
+  redis:
+    container_name: redis
+    image: redis:alpine
+    restart: unless-stopped
+    ports:
+      - "6379:6379"

@@ -1,21 +1,33 @@
-# docker-arena
+Docker image for [bee-queue arena]. Allow you to monitor your bull queue without any coding!
 
-The official docker application for bee-queue arena.
-
-You can `docker pull` Arena from [Docker Hub](https://hub.docker.com/r/mixmaxhq/arena).
-
-To build the image simply run:
-
-```shell
-$ docker build -t <name-image> .
+### Quick start with Docker
 ```
-
-To run a container, execute the following command. Note that we need to settle the location of `index.json` in this container via volume mounting:
-
-```shell
-$ docker run -p 4567:4567 -v </local/route/to/index.json>:/opt/arena/index.json <name-image>
+docker run -p 4567:4567 -v index.json:/home/node/arena/index.json venatum/arena
 ```
+will run bull-board interface on `localhost:3000` and connect to your redis instance on `localhost:6379` without password.
+
+To configure redis see "Environment variables" section.
+
+### Quick start with docker-compose
+
+```yaml
+version: "3"
+
+services:
+    arena:
+        container_name: arena
+        image: venatum/arena
+        restart: unless-stopped
+        volumes:
+          - ./index.json:/home/node/arena/index.json:ro
+        ports:
+          - "4567:5467"
+```
+will run arena interface on `localhost:4567` and connect to your redis instance on `localhost:6379` without password.
+
+### Configuration
 
 See [the docs][usage] for `index.json`.
 
+[bee-queue arena]: https://github.com/bee-queue/arena
 [usage]: https://github.com/bee-queue/arena/#usage

@@ -1,0 +1,16 @@
+{
+  "baseBranches": ["master"],
+  "autodiscover": false,
+  "repositories": [
+    "Venatum/bull-board-docker",
+    "Venatum/docker-arena"
+  ],
+  "labels": ["dependencies"],
+  "assignAutomerge": true,
+  "assignees": ["Venatum"],
+  "automerge": false,
+  "automergeStrategy": "merge-commit",
+  "automergeType": "pr",
+  "ignoreTests": true,
+  "rebaseWhen": "conflicted"
+}
